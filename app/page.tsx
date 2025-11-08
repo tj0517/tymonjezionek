@@ -83,7 +83,7 @@ export default function Home() {
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.3, duration: 0.8 }}
-        className="text-4xl sm:text-5xl xl:text-6xl  font-bold font-[Playfair_Display]"
+        className="text-3xl sm:text-5xl xl:text-6xl  font-bold font-[Playfair_Display]"
       >
         <h1 className="block mb-8 xl:mb-10  leading-tight">
           Nowoczesne aplikacje<br/> webowe dla twojego

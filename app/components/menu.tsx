@@ -18,11 +18,13 @@ export default function Menu({
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav aria-label="Main menu" className="w-full px-4 py-3 absolute top-0 left-0 z-30">
+    <nav
+      aria-label="Main menu"
+      className="w-full px-4 py-3 absolute top-0 left-0 z-30"
+    >
       <div className="w-full mx-auto flex items-center justify-between pt-6 pr-6">
-
         {/* Desktop menu */}
-        <div className="hidden lg:flex ml-auto items-center space-x-10  xl:text-lg font-medium text-white">
+        <div className="hidden lg:flex ml-auto items-center space-x-10 xl:text-lg font-medium text-white">
           <motion.div
             initial="hidden"
             animate="visible"
@@ -37,13 +39,19 @@ export default function Menu({
                 key={item.href}
                 variants={{
                   hidden: { y: -20, opacity: 0 },
-                  visible: { y: 0, opacity: 1, transition: { duration: 0.6 } },
+                  visible: {
+                    y: 0,
+                    opacity: 1,
+                    transition: { duration: 0.6 },
+                  },
                 }}
               >
                 <Link
                   href={item.href}
                   className={`px-6 py-2 flex items-center justify-center rounded-full border-l-2 border-r-2 border-blue-400 hover:bg-blue-400 hover:text-black transition-all ${
-                    index === items.length - 1 ? "bg-blue-400 hover:bg-white" : ""
+                    index === items.length - 1
+                      ? "bg-blue-400 hover:bg-white"
+                      : ""
                   }`}
                 >
                   {item.label}
@@ -86,15 +94,17 @@ export default function Menu({
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.3 }}
-            className="md:hidden absolute top-full left-0 w-full bg-black flex flex-col items-center py-6 space-y-4 z-20"
+            className="lg:hidden fixed top-0 left-0 w-full h-screen bg-black/95 flex flex-col items-center justify-center space-y-6 z-40"
           >
             {items.map((item, index) => (
               <Link
                 key={item.href}
                 href={item.href}
                 onClick={() => setIsOpen(false)}
-                className={`px-6 py-2 flex items-center justify-center rounded-full border-l-2 border-r-2 border-blue-400 hover:bg-blue-400 hover:text-black transition-all ${
-                  index === items.length - 1 ? "bg-blue-400 hover:bg-white" : ""
+                className={`px-6 py-3 text-lg font-medium flex items-center justify-center rounded-full border-l-2 border-r-2 border-blue-400 hover:bg-blue-400 hover:text-black transition-all ${
+                  index === items.length - 1
+                    ? "bg-blue-400 hover:bg-white"
+                    : ""
                 }`}
               >
                 {item.label}
