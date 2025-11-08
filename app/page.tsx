@@ -1,65 +1,305 @@
+"use client";
 import Image from "next/image";
+import Menu from "./components/menu";
+import ProjectCard from "./components/projekt";
+import portfolio from "../data/portfolio.json";
+import { Paintbrush, MonitorSmartphone, Code2, Search } from "lucide-react";
+import Calendar from "./components/kalendarz";
+import Opinnie from "./components/opinnie";
+import KontaktForm from "./components/form";
+import Footer from "./components/footer";
+import { motion } from "framer-motion";
+import OfertaSection from "./components/oferta";
+
+const icons = { MonitorSmartphone, Paintbrush, Code2, Search };
+type IconName = keyof typeof icons;
+
+const o_mnie = [
+  { id: 1, data: "2+", description: "Lata doświadczenia" },
+  { id: 2, data: "3+", description: "Zadowolonych klientów" },
+  { id: 3, data: "10+", description: "Wykonanych projektów" },
+];
+
+const oferta: { id: number; icon: IconName; title: string; description: string }[] = [
+  {
+    id: 1,
+    icon: "Paintbrush",
+    title: "Tworzymy Grafiki",
+    description:
+      "Projektujemy dopasowane elementy graficzne — od ilustracji po bannery, dzięki którym Twoja marka wyróżni się w sieci.",
+  },
+  {
+    id: 2,
+    icon: "MonitorSmartphone",
+    title: "Projektujemy Design",
+    description:
+      "Tworzymy responsywne i funkcjonalne interfejsy. Każdy projekt to połączenie estetyki i użyteczności — UX/UI z myślą o użytkowniku.",
+  },
+  {
+    id: 3,
+    icon: "Code2",
+    title: "Programujemy",
+    description:
+      "Kodujemy szybkie, responsywne strony i aplikacje oparte na najnowszych technologiach — Next.js, Tailwind CSS, HTML5.",
+  },
+  {
+    id: 4,
+    icon: "Search",
+    title: "Optymalizujemy",
+    description:
+      "Ulepszamy wydajność, SEO i doświadczenie użytkownika, by Twoja strona działała szybciej i była lepiej widoczna w wynikach wyszukiwania.",
+  },
+];
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
+    <div className="w-full h-fit relative text-white overflow-x-hidden">
+      <Menu />
+
+      {/* HERO */}
+      <div className="bg-black w-full pb-24 md:pb-0 md:h-screen relative overflow-hidden flex flex-row px-0 md:px-36 py-0">
         <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
+          src="/Ellipse_2.png"
+          alt="bg"
+          width={674}
+          height={659}
+          className="absolute bottom-0 right-0 translate-x-1/2 z-0  sm:scale-150 2xl:scale-200"
         />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+        <Image
+          src="/Ellipse_2.png"
+          alt="bg"
+          width={674}
+          height={659}
+          className="absolute top-[-20%] left-0 -translate-x-1/2 rotate-180 z-0"
+        />
+ <motion.div
+      initial={{ opacity: 0, y: 50 }}          // początek animacji (lekko niżej, przezroczysty)
+      animate={{ opacity: 1, y: 0 }}           // końcowy stan (pełna widoczność, pozycja normalna)
+      transition={{ duration: 1, ease: "easeOut" }} // czas i sposób animacji
+      className=" flex flex-col z-20 pt-30 lg:pt-42 xl:pt-30 mx-auto md:mx-0 text-center md:text-left"
+    >
+      {/* Nagłówek główny */}
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.3, duration: 0.8 }}
+        className="text-4xl sm:text-5xl xl:text-6xl  font-bold font-[Playfair_Display]"
+      >
+        <h1 className="block mb-8 xl:mb-10  leading-tight">
+          Nowoczesne aplikacje<br/> webowe dla twojego
+        </h1>
+        <motion.span
+          initial={{ scale: 0.8, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          transition={{ delay: 0.8, type: "spring", stiffness: 120 }}
+          className="bg-blue-400 px-8 py-2 rounded-2xl inline-block"
+        >
+          Biznesu.
+        </motion.span>
+      </motion.div>
+
+      {/* Podtytuł */}
+      <motion.div
+        initial={{ opacity: 0, y: 40 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 1.2, duration: 0.8 }}
+        className=" text-2xl sm:text-3xl xl:text-4xl font-light  mt-14 xl:mt-16"
+      >
+        <strong>Styl</strong>, <strong>technologia</strong>, <strong>SEO</strong> — <br/>wszystko
+        czego potrzebujesz.
+      </motion.div>
+
+      {/* Przycisk */}
+      <motion.button
+        whileHover={{ scale: 1.05, boxShadow: "0px 0px 20px #3B82F6" }}
+        whileTap={{ scale: 0.95 }}
+        initial={{ opacity: 0, x: -140 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ delay: 1.6, duration: 0.8 }}
+        className="bg-stone-800 px-8 py-3 border-2 border-blue-400 rounded-2xl w-[65%] mx-auto md:mx-0  text-2xl xl:text-3xl mt-14  xl:mt-20 shadow-[-5px_4px_10px_2px_#3B82F6]"
+      >
+        Darmowa wycena
+      </motion.button>
+    </motion.div>
+      </div>
+
+      {/* KONTENER NA LINIE */}
+     <div className="absolute top-[100vh] bottom-0 w-screen overflow-hidden pointer-events-none z-0">
+
+        {/* każda linia większa, przycięta do 100vw */}
+        <div className="absolute top-[-5%] left-0 w-full aspect-video opacity-30 ">
+          <Image src="/linebg-1.png" alt="bg" fill className="object-contain will-change-transform" />
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+        <div className="absolute top-[10%] left-[-20vw] w-[150vw] aspect-video opacity-50 rotate-20">
+          <Image src="/linebg-1.png" alt="bg" fill className="object-contain will-change-transform" />
         </div>
-      </main>
+        <div className="absolute top-[45%] left-0 w-full aspect-video opacity-90">
+          <Image src="/linebg-1.png" alt="bg" fill className="object-contain will-change-transform" />
+        </div>
+                <div className="absolute top-[65%] left-0 w-full aspect-video opacity-40">
+          <Image src="/linebg-1.png" alt="bg" fill className="object-contain will-change-transform" />
+        </div>
+ <div className="absolute bottom-[.5%]  left-0 w-screen h-[15%] flex justify-between pointer-events-none">
+  <div className="relative w-1/3 h-[80%] mx-auto z-10">
+
+    <div className="absolute inset-0 bg-white/60 blur-[100px] rounded-full"></div>
+  </div>
+    <div className="absolute w-full h-[140%] -translate-y-1/12  left-1/2 -translate-x-1/2">
+
+    <div className="absolute inset-0 bg-blue-400/60 blur-[80px] rounded-full"></div>
+  </div>
+</div>
+      </div>
+
+      {/* GŁÓWNA TREŚĆ */}
+      <div className="relative w-[85%] max-w-[1400px] mx-auto flex flex-col z-10">
+      
+        {/* PORTFOLIO */}
+        <section className="w-full relative h-auto flex flex-col z-20">
+          <div className="w-full px-10 pt-20 xl:pt-30 flex-col justify-between">
+ <motion.h2
+        initial={{ x: -150, opacity: 0 }}
+        whileInView={{ x: 0, opacity: 1 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+        viewport={{ once: true, amount: 0.3 }}
+        className="text-6xl font-bold font-[Playfair_Display] text-center md:text-left"
+      >
+        Portfolio
+      </motion.h2>
+
+      {/* Twój oryginalny blok tekstu */}
+      <motion.div
+        initial={{ x: 150, opacity: 0 }}
+        whileInView={{ x: 0, opacity: 1 }}
+        transition={{ duration: 0.9, delay: 0.2, ease: "easeOut" }}
+        viewport={{ once: true, amount: 0.3 }}
+        className="w-[95%] dm:w-3/4 md:w-[60%] mx-auto md:ml-[40%] lg::ml-[45%] flex flex-row text-center md:text-left md:justify-end mt-4 md:mt-0"
+      >
+        <div className="mt-10 font-extralight text-xl md:text-lg lg:text-xl xl:text-2xl">
+          Każdy projekt traktuję <strong>indywidualnie</strong> — słucham, analizuję,
+          projektuję, wdrażam.
+          <br />
+          W portfolio znajdziesz realizacje dla klientów z różnych branż.
+          <br />
+          Zobacz, jak pomagam zamieniać pomysły w{" "}
+          <strong>działające strony.</strong>
+        </div>
+      </motion.div>
+          </div>
+
+          <div className="mt-20 xl:mt-30 w-full flex flex-row flex-wrap justify-between gap-16 md:gap-24 lg:gap-14 xl:gap-20">
+            {portfolio.map((project) => (
+              <ProjectCard key={project.id} project={project} />
+            ))}
+          </div>
+        </section>
+
+        {/* O MNIE */}
+ <section className="mt-30 s-[90%] sm:w-3/4 mx-auto md:mx-0 md:w-full bg-stone-800 px-2 xl:px-10 py-12 rounded-4xl flex flex-row flex-wrap justify-between gap-6 md:gap-0 z-20">
+      {o_mnie.map((dane, index) => (
+        <motion.div
+          key={dane.id}
+          initial={{ y: 50, opacity: 0 }}             // start: lekko w dół i niewidoczny
+          whileInView={{ y: 0, opacity: 1 }}          // koniec: normalna pozycja i pełna widoczność
+          transition={{ duration: 0.8, delay: index * 0.2, ease: "easeOut" }}
+          viewport={{ once: true, amount: 0.3 }}      // animacja odpala się przy przewinięciu
+          className="w-2/3 md:w-1/2 lg:w-1/3 flex flex-col lg:border-r-2 border-r-blue-400 last:border-r-0 border-0 text-center mx-auto  md:last:mt-10 lg:last:mt-0"
+        >
+          <div className="text-8xl lg:text-7xl xl:text-8xl font-black bg-[linear-gradient(135deg,#3B82F6_27%,#FAFAFA_100%)] bg-clip-text text-transparent w-full text-center">
+            {dane.data}
+          </div>
+          <div className="text-2xl lg:Ltext-xl xl:text-2xl font-light mt-4 md:mt-6 pb-6">{dane.description}</div>
+        </motion.div>
+      ))}
+    </section>
+
+        {/* OFERTA */}
+        <OfertaSection oferta={oferta} icons={icons}/>
+ 
+
+        {/* OPINNIE */}
+        <section className="w-full flex flex-col align-middle mt-20 py-10">
+      <motion.h2
+        initial={{ y: 50, opacity: 0 }}
+        whileInView={{ y: 0, opacity: 1 }}
+        transition={{ duration: 1, ease: "easeOut" }}
+        viewport={{ once: true, amount: 0.3 }}
+        className="text-6xl font-bold font-[Playfair_Display] w-full text-center"
+      >
+        Nasze Opinnie
+      </motion.h2>
+
+      {/* Linia */}
+      <motion.div
+        initial={{ scaleX: 0, opacity: 0 }}
+        whileInView={{ scaleX: 1, opacity: 1 }}
+        transition={{ duration: 1, delay: 0.3, ease: "easeOut" }}
+        viewport={{ once: true, amount: 0.3 }}
+        className="my-10 w-1/4 mx-auto border-2 border-blue-400 origin-left"
+      />
+
+      {/* Opis */}
+      <motion.div
+        initial={{ y: 20, opacity: 0 }}
+        whileInView={{ y: 0, opacity: 1 }}
+        transition={{ duration: 1, delay: 0.6, ease: "easeOut" }}
+        viewport={{ once: true, amount: 0.3 }}
+        className="text-center w-9/10 md:w-2/3 mx-auto font-extralight text-xl md:text-lg lg:text-xl xl:text-2xl"
+      >
+        Opinie naszych klientów są najlepszym <strong>dowodem jakości</strong> naszej pracy.
+        <br />
+        Każdy projekt traktujemy <strong>indywidualnie</strong> — od pierwszej rozmowy po wdrożenie i wsparcie po publikacji.
+      </motion.div>
+<Opinnie></Opinnie>
+</section>
+
+
+<section className=" mt-20 w-[90%] mx-auto flex flex-row justify-between pb-40">
+      <motion.div
+        className="w-[40%] flex flex-col justify-between h-full"
+        initial={{ x: -100, opacity: 0 }}
+        whileInView={{ x: 0, opacity: 1 }}
+        transition={{ duration: 1, ease: "easeOut" }}
+        viewport={{ once: true, amount: 0.3 }}
+      >
+        {/* Tekst */}
+        <motion.div
+          initial={{ y: 20, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.8, delay: 0.3 }}
+          viewport={{ once: true, amount: 0.3 }}
+          className="font-extralight text-2xl leading-relaxed text-white"
+        >
+          Umów <strong>darmową konsultację</strong> i poznaj, jak możemy pomóc Ci <strong>rozwinąć Twój projekt</strong>.
+          <br />
+          Wybierz termin w kalendarzu lub zostaw wiadomość w formularzu — <strong>odezwiemy się wkrótce</strong>.
+        </motion.div>
+
+        {/* Kalendarz */}
+        <motion.div
+          initial={{ y: 20, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.8, delay: 0.5 }}
+          viewport={{ once: true, amount: 0.3 }}
+          className="mt-16"
+        >
+          <Calendar />
+        </motion.div>
+      </motion.div>
+
+      {/* Prawa kolumna - formularz */}
+      <motion.div
+        className="w-1/2"
+        initial={{ x: 100, opacity: 0 }}
+        whileInView={{ x: 0, opacity: 1 }}
+        transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}
+        viewport={{ once: true, amount: 0.3 }}
+      >
+        <KontaktForm />
+      </motion.div>
+</section>
+      </div>
+      <Footer/>
     </div>
   );
 }

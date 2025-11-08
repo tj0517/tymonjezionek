@@ -1,0 +1,34 @@
+[
+  {
+    "id": 1,
+    "title": "SeaClouds",
+    "image": "/portfolio/Seaclouds.png",
+    "tags": ["Next.js", "Tailwind CSS"],
+    "description": "Strona dla firmy Sea Cloud oferującej szeroką ofertę usług dla branży offshore. Strona oparta na technologii Next.js, gwarantującej szybkie ładowanie i responsywność na różnych urządzeniach. Z wdrożonym systemem obsługi kontaktu mailowego oraz komponentem serwującym artykuły blogowe.",
+    "buttonText": "Darmowa wycena"
+  },
+    {
+    "id": 2,
+    "title": "SeaClouds",
+    "image": "/portfolio/Seaclouds.png",
+    "tags": ["Next.js", "Tailwind CSS"],
+    "description": "Strona dla firmy Sea Cloud oferującej szeroką ofertę usług dla branży offshore. Strona oparta na technologii Next.js, gwarantującej szybkie ładowanie i responsywność na różnych urządzeniach. Z wdrożonym systemem obsługi kontaktu mailowego oraz komponentem serwującym artykuły blogowe.",
+    "buttonText": "Darmowa wycena"
+  },
+    {
+    "id": 3,
+    "title": "SeaClouds",
+    "image": "/portfolio/Seaclouds.png",
+    "tags": ["Next.js", "Tailwind CSS"],
+    "description": "Strona dla firmy Sea Cloud oferującej szeroką ofertę usług dla branży offshore. Strona oparta na technologii Next.js, gwarantującej szybkie ładowanie i responsywność na różnych urządzeniach. Z wdrożonym systemem obsługi kontaktu mailowego oraz komponentem serwującym artykuły blogowe.",
+    "buttonText": "Darmowa wycena"
+  },
+    {
+    "id": 4,
+    "title": "SeaClouds",
+    "image": "/portfolio/Seaclouds.png",
+    "tags": ["Next.js", "Tailwind CSS"],
+    "description": "Strona dla firmy Sea Cloud oferującej szeroką ofertę usług dla branży offshore. Strona oparta na technologii Next.js, gwarantującej szybkie ładowanie i responsywność na różnych urządzeniach. Z wdrożonym systemem obsługi kontaktu mailowego oraz komponentem serwującym artykuły blogowe.",
+    "buttonText": "Darmowa wycena"
+  }
+]
