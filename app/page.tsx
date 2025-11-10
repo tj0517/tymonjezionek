@@ -269,7 +269,7 @@ export default function Home() {
       whileInView={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.8, delay: 0.3 }}
       viewport={{ once: true, amount: 0.3 }}
-      className="font-extralight text-xl xl:text-2xl leading-relaxed text-white w-full md:w-[40%] lg:w-[80%] xl:w-3/4 text-center md:text-left"
+      className="font-extralight text-xl xl:text-2xl leading-relaxed text-white w-full md:w-[35%] lg:w-full  text-center md:text-left"
     >
       Umów <strong>darmową konsultację</strong> i poznaj, jak możemy pomóc Ci <strong>rozwinąć Twój projekt</strong>.
       <br />
@@ -282,7 +282,7 @@ export default function Home() {
       whileInView={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.8, delay: 0.5 }}
       viewport={{ once: true, amount: 0.3 }}
-      className="w-full md:w-1/2 lg:w-auto mt-8 sm:mt-16 md:mt-0 "
+      className="w-full md:w-[60%] lg:w-auto mt-8 sm:mt-16 md:mt-0 "
     >
       <Calendar />
     </motion.div>
