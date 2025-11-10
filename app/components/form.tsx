@@ -21,7 +21,7 @@ export default function KontaktForm() {
   };
 
   return (
-    <div className="w-full mx-auto bg-stone-900 rounded-3xl p-8 text-white shadow-lg">
+    <div className="w-full h-full mx-auto bg-stone-900 rounded-3xl p-8 text-white shadow-lg">
       <h2 className="text-2xl font-semibold mb-2">
         Opowiedz nam o swoim pomyśle!
       </h2>

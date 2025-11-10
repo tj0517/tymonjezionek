@@ -195,7 +195,7 @@ export default function Home() {
         </section>
 
         {/* O MNIE */}
- <section className="mt-30 s-[90%] sm:w-3/4 mx-auto md:mx-0 md:w-full bg-stone-800 px-2 xl:px-10 py-12 rounded-4xl flex flex-row flex-wrap justify-between gap-6 md:gap-0 z-20">
+ <section className="mt-30 w-full sm:w-3/4 mx-auto md:mx-0 md:w-full bg-stone-800 px-2 xl:px-10 py-12 rounded-4xl flex flex-row flex-wrap justify-between gap-6 md:gap-0 z-20">
       {o_mnie.map((dane, index) => (
         <motion.div
           key={dane.id}
@@ -253,51 +253,53 @@ export default function Home() {
 <Opinnie></Opinnie>
 </section>
 
+{/* Formularz */}
+<section className="mt-20 h-auto lg:h-[750px] xl:h-[850px] w-full sm:w-[90%] md:w-full 2xl:w-[90%] mx-auto flex flex-col lg:flex-row justify-between pb-20 lg:pb-30 xl:pb-40 items-stretch">
+  {/* Lewa kolumna */}
+  <motion.div
+    className="w-full lg:w-[40%] flex flex-col md:flex-row lg:flex-col justify-between h-full" // h-full dopasuje wysokość do sekcji
+    initial={{ x: -100, opacity: 0 }}
+    whileInView={{ x: 0, opacity: 1 }}
+    transition={{ duration: 1, ease: "easeOut" }}
+    viewport={{ once: true, amount: 0.3 }}
+  >
+    {/* Tekst */}
+    <motion.div
+      initial={{ y: 20, opacity: 0 }}
+      whileInView={{ y: 0, opacity: 1 }}
+      transition={{ duration: 0.8, delay: 0.3 }}
+      viewport={{ once: true, amount: 0.3 }}
+      className="font-extralight text-xl xl:text-2xl leading-relaxed text-white w-full md:w-[40%] lg:w-[80%] xl:w-3/4 text-center md:text-left"
+    >
+      Umów <strong>darmową konsultację</strong> i poznaj, jak możemy pomóc Ci <strong>rozwinąć Twój projekt</strong>.
+      <br />
+      Wybierz termin w kalendarzu lub zostaw wiadomość w formularzu — <strong>odezwiemy się wkrótce</strong>.
+    </motion.div>
 
-<section className=" mt-20 w-[90%] mx-auto flex flex-row justify-between pb-40">
-      <motion.div
-        className="w-[40%] flex flex-col justify-between h-full"
-        initial={{ x: -100, opacity: 0 }}
-        whileInView={{ x: 0, opacity: 1 }}
-        transition={{ duration: 1, ease: "easeOut" }}
-        viewport={{ once: true, amount: 0.3 }}
-      >
-        {/* Tekst */}
-        <motion.div
-          initial={{ y: 20, opacity: 0 }}
-          whileInView={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.3 }}
-          viewport={{ once: true, amount: 0.3 }}
-          className="font-extralight text-2xl leading-relaxed text-white"
-        >
-          Umów <strong>darmową konsultację</strong> i poznaj, jak możemy pomóc Ci <strong>rozwinąć Twój projekt</strong>.
-          <br />
-          Wybierz termin w kalendarzu lub zostaw wiadomość w formularzu — <strong>odezwiemy się wkrótce</strong>.
-        </motion.div>
+    {/* Kalendarz */}
+    <motion.div
+      initial={{ y: 20, opacity: 0 }}
+      whileInView={{ y: 0, opacity: 1 }}
+      transition={{ duration: 0.8, delay: 0.5 }}
+      viewport={{ once: true, amount: 0.3 }}
+      className="w-full md:w-1/2 lg:w-auto mt-8 sm:mt-16 md:mt-0 "
+    >
+      <Calendar />
+    </motion.div>
+  </motion.div>
 
-        {/* Kalendarz */}
-        <motion.div
-          initial={{ y: 20, opacity: 0 }}
-          whileInView={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.5 }}
-          viewport={{ once: true, amount: 0.3 }}
-          className="mt-16"
-        >
-          <Calendar />
-        </motion.div>
-      </motion.div>
-
-      {/* Prawa kolumna - formularz */}
-      <motion.div
-        className="w-1/2"
-        initial={{ x: 100, opacity: 0 }}
-        whileInView={{ x: 0, opacity: 1 }}
-        transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}
-        viewport={{ once: true, amount: 0.3 }}
-      >
-        <KontaktForm />
-      </motion.div>
+  {/* Prawa kolumna - formularz */}
+  <motion.div
+    className="w-full lg:w-[52.55%] lg:h-full mt-12 sm:mt-16 lg:mt-0" // h-full, żeby sekcja narzuciła wysokość
+    initial={{ x: 100, opacity: 0 }}
+    whileInView={{ x: 0, opacity: 1 }}
+    transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}
+    viewport={{ once: true, amount: 0.3 }}
+  >
+    <KontaktForm />
+  </motion.div>
 </section>
+
       </div>
       <Footer/>
     </div>
