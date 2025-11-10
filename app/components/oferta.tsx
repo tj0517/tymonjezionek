@@ -17,7 +17,7 @@ interface Props {
 export default function OfertaSection({ oferta, icons }: Props) {
   const variants = [
     {
-      top: "absolute top-0 right-0 translate-x-1/2  rotate-180 opacity-80 scale-125",
+      top: "absolute top-0 right-0 translate-x-[90%]  rotate-180 opacity-80 scale-200",
       bottom: "absolute bottom-0 left-0 -translate-x-1/2  opacity-80 scale-120",
     },
     {
@@ -25,7 +25,7 @@ export default function OfertaSection({ oferta, icons }: Props) {
       bottom: "absolute bottom-0 left-0 -translate-x-1/4 translate-y-1/2 rotate-[315deg] opacity-80 scale-115",
     },
     {
-      top: "absolute top-0 left-0 -translate-x-1/3 -translate-y-1/2 rotate-90 opacity-80 scale-75",
+      top: "absolute top-0 left-0 -translate-x-1/3 -translate-y-1/2 rotate-70 opacity-80 scale-75",
       bottom: "absolute bottom-0 right-0 translate-x-1/2 opacity-180 scale-125",
     },
     {
