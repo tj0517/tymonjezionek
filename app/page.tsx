@@ -53,7 +53,7 @@ const oferta: { id: number; icon: IconName; title: string; description: string }
 
 export default function Home() {
   return (
-    <div className="w-full h-fit relative text-white overflow-x-hidden">
+    <div id="home" className="w-full h-fit relative text-white overflow-x-hidden scroll-smooth">
       <Menu />
 
       {/* HERO */}
@@ -155,7 +155,7 @@ export default function Home() {
       <div className="relative w-[85%] max-w-[1400px] mx-auto flex flex-col z-10">
       
         {/* PORTFOLIO */}
-        <section className="w-full relative h-auto flex flex-col z-20">
+        <section id="portfolio" className="w-full relative h-auto flex flex-col z-20">
           <div className="w-full px-10 pt-20 xl:pt-30 flex-col justify-between">
  <motion.h2
         initial={{ x: -150, opacity: 0 }}
@@ -195,7 +195,7 @@ export default function Home() {
         </section>
 
         {/* O MNIE */}
- <section className="mt-30 w-full sm:w-3/4 mx-auto md:mx-0 md:w-full bg-stone-800 px-2 xl:px-10 py-12 rounded-4xl flex flex-row flex-wrap justify-between gap-6 md:gap-0 z-20">
+ <section id="oferta"  className="mt-30 w-full sm:w-3/4 mx-auto md:mx-0 md:w-full bg-stone-800 px-2 xl:px-10 py-12 rounded-4xl flex flex-row flex-wrap justify-between gap-6 md:gap-0 z-20">
       {o_mnie.map((dane, index) => (
         <motion.div
           key={dane.id}
@@ -214,47 +214,12 @@ export default function Home() {
     </section>
 
         {/* OFERTA */}
-        <OfertaSection oferta={oferta} icons={icons}/>
+        <OfertaSection  oferta={oferta} icons={icons}/>
  
 
-        {/* OPINNIE */}
-        <section className="w-full flex flex-col align-middle mt-20 py-10">
-      <motion.h2
-        initial={{ y: 50, opacity: 0 }}
-        whileInView={{ y: 0, opacity: 1 }}
-        transition={{ duration: 1, ease: "easeOut" }}
-        viewport={{ once: true, amount: 0.3 }}
-        className="text-6xl font-bold font-[Playfair_Display] w-full text-center"
-      >
-        Nasze Opinnie
-      </motion.h2>
-
-      {/* Linia */}
-      <motion.div
-        initial={{ scaleX: 0, opacity: 0 }}
-        whileInView={{ scaleX: 1, opacity: 1 }}
-        transition={{ duration: 1, delay: 0.3, ease: "easeOut" }}
-        viewport={{ once: true, amount: 0.3 }}
-        className="my-10 w-1/4 mx-auto border-2 border-blue-400 origin-left"
-      />
-
-      {/* Opis */}
-      <motion.div
-        initial={{ y: 20, opacity: 0 }}
-        whileInView={{ y: 0, opacity: 1 }}
-        transition={{ duration: 1, delay: 0.6, ease: "easeOut" }}
-        viewport={{ once: true, amount: 0.3 }}
-        className="text-center w-9/10 md:w-2/3 mx-auto font-extralight text-xl md:text-lg lg:text-xl xl:text-2xl"
-      >
-        Opinie naszych klientów są najlepszym <strong>dowodem jakości</strong> naszej pracy.
-        <br />
-        Każdy projekt traktujemy <strong>indywidualnie</strong> — od pierwszej rozmowy po wdrożenie i wsparcie po publikacji.
-      </motion.div>
-<Opinnie></Opinnie>
-</section>
 
 {/* Formularz */}
-<section className="mt-20 h-auto lg:h-[750px] xl:h-[850px] w-full sm:w-[90%] md:w-full 2xl:w-[90%] mx-auto flex flex-col lg:flex-row justify-between pb-20 lg:pb-30 xl:pb-40 items-stretch">
+<section id="kontakt" className="mt-20 h-auto lg:h-[750px] xl:h-[850px] w-full sm:w-[90%] md:w-full 2xl:w-[90%] mx-auto flex flex-col lg:flex-row justify-between pb-20 lg:pb-30 xl:pb-40 items-stretch">
   {/* Lewa kolumna */}
   <motion.div
     className="w-full lg:w-[40%] flex flex-col md:flex-row lg:flex-col justify-between h-full" // h-full dopasuje wysokość do sekcji

@@ -4,7 +4,12 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 
 export default function Footer() {
-  const navItems = ["Home", "Portfolio", "Oferta", "Kontakt"];
+const navItems = [
+  { href: "#home", label: "Home" },
+  { href: "#portfolio", label: "Portfolio" },
+  { href: "#oferta", label: "Oferta" },
+  { href: "#kontakt", label: "Kontakt" },
+];
 
   return (
     <footer className="relative w-full text-white z-30 overflow-hidden">
@@ -56,23 +61,23 @@ export default function Footer() {
           }}
           className="flex flex-row flex-wrap gap-4 md:gap-10 text-sm md:text-base font-medium text-white justify-center" 
         >
-          {navItems.map((item) => (
-            <motion.div
-              key={item}
-              variants={{
-                hidden: { y: 20, opacity: 0 },
-                visible: { y: 0, opacity: 1, transition: { duration: 0.6 } },
-              }}
-              className="w-[40%] sm:w-auto"
-            >
-              <Link
-                href={`/${item.toLowerCase()}`}
-                className="px-6 py-2 flex items-center justify-center rounded-full border-l-2 border-r-2 border-blue-400 hover:bg-blue-400 hover:text-black transition-all"
-              >
-                {item}
-              </Link>
-            </motion.div>
-          ))}
+         {navItems.map((item) => (
+  <motion.div
+    key={item.href}
+    variants={{
+      hidden: { y: 20, opacity: 0 },
+      visible: { y: 0, opacity: 1, transition: { duration: 0.6 } },
+    }}
+    className="w-[40%] sm:w-auto"
+  >
+    <a
+      href={item.href} // <--- anchor link
+      className="px-6 py-2 flex items-center justify-center rounded-full border-l-2 border-r-2 border-blue-400 hover:bg-blue-400 hover:text-black transition-all"
+    >
+      {item.label}
+    </a>
+  </motion.div>
+))}
         </motion.nav>
       </div>
     </footer>

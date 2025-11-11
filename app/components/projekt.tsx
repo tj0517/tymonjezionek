@@ -9,6 +9,7 @@ interface Project {
   tags: string[];
   description: string;
   buttonText: string;
+  href:string;
 }
 
 export default function ProjectCard({ project }: { project: Project }) {
@@ -44,9 +45,11 @@ export default function ProjectCard({ project }: { project: Project }) {
       <div className="w-full md:w-[90%] lg:w-[80%] mt-6 md:mt-10 lg:mt-6 xl:mt-10  md:text-lg lg:text-[14px] xl:text-[16px]">{project.description}</div>
 
       {/* Przycisk */}
-      <button className="bg-stone-800 py-3 border-2 border-blue-400 rounded-2xl w-1/2 xl:w-[40%] text-lg xl:text-xl mt-8 md:mt-10 ld:mt-6 xl:mt-10 shadow-[-5px_4px_10px_2px_#3B82F6]">
-        {project.buttonText}
+       <a href={project.href} target="_blank">
+      <button className="bg-stone-800 py-3 border-2 border-blue-400 rounded-2xl w-1/2 xl:w-[40%] text-lg xl:text-xl mt-8 md:mt-10 ld:mt-6 xl:mt-10 shadow-[-5px_4px_10px_2px_#3B82F6] hover:cursor-pointer hover:bg-black transition-all duration-300 ">
+       {project.buttonText}
       </button>
+      </a>
     </motion.div>
   );
 }

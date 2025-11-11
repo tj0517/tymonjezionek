@@ -3,32 +3,36 @@
     "id": 1,
     "title": "SeaClouds",
     "image": "/portfolio/Seaclouds.png",
-    "tags": ["Next.js", "Tailwind CSS"],
+    "tags": ["Next.js", "Tailwind CSS","PHP"],
     "description": "Strona dla firmy Sea Cloud oferującej szeroką ofertę usług dla branży offshore. Strona oparta na technologii Next.js, gwarantującej szybkie ładowanie i responsywność na różnych urządzeniach. Z wdrożonym systemem obsługi kontaktu mailowego oraz komponentem serwującym artykuły blogowe.",
-    "buttonText": "Darmowa wycena"
+    "buttonText": "Zobacz stronę",
+    "href":"https://www.seaclouds.eu"
   },
-    {
+  {
     "id": 2,
-    "title": "SeaClouds",
-    "image": "/portfolio/Seaclouds.png",
-    "tags": ["Next.js", "Tailwind CSS"],
-    "description": "Strona dla firmy Sea Cloud oferującej szeroką ofertę usług dla branży offshore. Strona oparta na technologii Next.js, gwarantującej szybkie ładowanie i responsywność na różnych urządzeniach. Z wdrożonym systemem obsługi kontaktu mailowego oraz komponentem serwującym artykuły blogowe.",
-    "buttonText": "Darmowa wycena"
+    "title": "Bloxnauts",
+    "image": "/portfolio/bloxnauts.png",
+    "tags": ["HTML5", "CSS","JS"],
+    "description": "Strona dla firmy zajmującej się produkcją gier. Projekt stworzony w HTML5, CSS oraz JavaScript, z naciskiem na interaktywność i animacje odwzorowujące charakter gier. Zawiera sekcję portfolio projektów oraz animacje przyciągające uwage klienta.",
+    "buttonText": "Zobacz stronę",
+        "href":"https://bloxnauts.com"
   },
-    {
+  {
     "id": 3,
-    "title": "SeaClouds",
-    "image": "/portfolio/Seaclouds.png",
+    "title": "Fight Gym",
+    "image": "/portfolio/Fight_Gym.png",
     "tags": ["Next.js", "Tailwind CSS"],
-    "description": "Strona dla firmy Sea Cloud oferującej szeroką ofertę usług dla branży offshore. Strona oparta na technologii Next.js, gwarantującej szybkie ładowanie i responsywność na różnych urządzeniach. Z wdrożonym systemem obsługi kontaktu mailowego oraz komponentem serwującym artykuły blogowe.",
-    "buttonText": "Darmowa wycena"
+    "description": "Przykładowy layout strony dla siłowni Fight Gym. Układ responsywny z dużymi sekcjami hero, kartami treningów oraz harmonogramem zajęć. Projekt stworzony w Next.js z użyciem Tailwind CSS, umożliwiający łatwe dodawanie treści i zdjęć.",
+    "buttonText": "Zobacz stronę",
+        "href":"https://fight-gym.vercel.app/"
   },
-    {
+  {
     "id": 4,
-    "title": "SeaClouds",
-    "image": "/portfolio/Seaclouds.png",
-    "tags": ["Next.js", "Tailwind CSS"],
-    "description": "Strona dla firmy Sea Cloud oferującej szeroką ofertę usług dla branży offshore. Strona oparta na technologii Next.js, gwarantującej szybkie ładowanie i responsywność na różnych urządzeniach. Z wdrożonym systemem obsługi kontaktu mailowego oraz komponentem serwującym artykuły blogowe.",
-    "buttonText": "Darmowa wycena"
+    "title": "Azure Gym",
+    "image": "/portfolio/Azure_Gym.png",
+    "tags": ["HTML5", "CSS"],
+    "description": "Przykładowy layout strony dla siłowni Azure Gym. Strona oparta na HTML5 i CSS, z minimalistycznym designem i przejrzystym układem sekcji.",
+    "buttonText": "Zobacz stronę",
+        "href":"https://gym-azure-nine.vercel.app/"
   }
 ]

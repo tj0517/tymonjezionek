@@ -1,0 +1,35 @@
+        {/* OPINNIE */}
+      <section className="w-full flex flex-col align-middle mt-20 py-10">
+      <motion.h2
+        initial={{ y: 50, opacity: 0 }}
+        whileInView={{ y: 0, opacity: 1 }}
+        transition={{ duration: 1, ease: "easeOut" }}
+        viewport={{ once: true, amount: 0.3 }}
+        className="text-6xl font-bold font-[Playfair_Display] w-full text-center"
+      >
+        Nasze Opinnie
+      </motion.h2>
+
+      {/* Linia */}
+      <motion.div
+        initial={{ scaleX: 0, opacity: 0 }}
+        whileInView={{ scaleX: 1, opacity: 1 }}
+        transition={{ duration: 1, delay: 0.3, ease: "easeOut" }}
+        viewport={{ once: true, amount: 0.3 }}
+        className="my-10 w-1/4 mx-auto border-2 border-blue-400 origin-left"
+      />
+
+      {/* Opis */}
+      <motion.div
+        initial={{ y: 20, opacity: 0 }}
+        whileInView={{ y: 0, opacity: 1 }}
+        transition={{ duration: 1, delay: 0.6, ease: "easeOut" }}
+        viewport={{ once: true, amount: 0.3 }}
+        className="text-center w-9/10 md:w-2/3 mx-auto font-extralight text-xl md:text-lg lg:text-xl xl:text-2xl"
+      >
+        Opinie naszych klientów są najlepszym <strong>dowodem jakości</strong> naszej pracy.
+        <br />
+        Każdy projekt traktujemy <strong>indywidualnie</strong> — od pierwszej rozmowy po wdrożenie i wsparcie po publikacji.
+      </motion.div>
+<Opinnie></Opinnie>
+</section>

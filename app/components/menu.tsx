@@ -8,9 +8,9 @@ type MenuItem = { href: string; label: string };
 export default function Menu({
   items = [
     { href: "/", label: "Home" },
-    { href: "/about", label: "Portfolio" },
-    { href: "/opinnie", label: "Opinnie" },
-    { href: "/contact", label: "Kontakt" },
+    { href: "#portfolio", label: "Portfolio" },
+    { href: "#oferta", label: "Oferta" },
+    { href: "#kontakt", label: "Kontakt" },
   ],
 }: {
   items?: MenuItem[];
@@ -48,6 +48,7 @@ export default function Menu({
               >
                 <Link
                   href={item.href}
+                  
                   className={`px-6 py-2 flex items-center justify-center rounded-full border-l-2 border-r-2 border-blue-400 hover:bg-blue-400 hover:text-black transition-all ${
                     index === items.length - 1
                       ? "bg-blue-400 hover:bg-white"
