@@ -14,11 +14,25 @@ export default function KontaktForm() {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    console.log("Wysłano:", form);
+const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+  e.preventDefault();
+
+  const res = await fetch("/api/kontakt", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(form),
+  });
+
+  const result = await res.json();
+
+  if (res.ok) {
     alert("Dziękujemy za wiadomość!");
-  };
+    setForm({ name: "", email: "", message: "" });
+  } else {
+    alert("Błąd: " + (result.error || "Nie udało się wysłać wiadomości"));
+  }
+};
+
 
   return (
     <div className="w-full h-full mx-auto bg-stone-900 rounded-3xl p-8 text-white shadow-lg">

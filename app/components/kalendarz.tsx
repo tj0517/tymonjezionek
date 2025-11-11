@@ -35,16 +35,33 @@ export default function Calendar() {
     setStep(3);
   };
 
-  const handleConfirm = () => {
-    if (!email || !selectedHour || !selectedDay) return;
-    const newRes = {
-      date: `${selectedDay} ${currentDate.format("MMMM YYYY")}`,
-      hour: selectedHour,
-      email,
-    };
+  const handleConfirm = async () => {
+  if (!email || !selectedHour || !selectedDay) return;
+
+  const newRes = {
+    date: `${selectedDay} ${currentDate.format("MMMM YYYY")}`,
+    hour: selectedHour,
+    email,
+  };
+
+  try {
+    const res = await fetch("/api/reservation", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(newRes),
+    });
+
+    if (!res.ok) throw new Error("Błąd przy zapisie");
+
+    const data = await res.json();
+    console.log("Zapisano rezerwację:", data);
+
     setReservations([...reservations, newRes]);
     setStep(4);
-  };
+  } catch (err) {
+    alert("Nie udało się zapisać rezerwacji 😢");
+  }
+};
 
   const resetCalendar = () => {
     setStep(1);
