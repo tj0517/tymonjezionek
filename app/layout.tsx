@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { Playfair_Display, Manrope } from "next/font/google";
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 const playfair = Playfair_Display({ subsets: ["latin"], display: "swap" });
 const manrope = Manrope({ subsets: ["latin"], display: "swap" });
@@ -20,6 +21,7 @@ export default function RootLayout({
       <body
         className={`${manrope.className} overflow-x-clip`}>
         {children}
+             <SpeedInsights />
       </body>
     </html>
   );
