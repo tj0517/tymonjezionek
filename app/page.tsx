@@ -111,7 +111,7 @@ export default function Home() {
       </motion.div>
 
 <Link
-                  href="/kontakt"
+                  href="#kontakt"
                 >
     
       {/* Przycisk */}
@@ -121,7 +121,7 @@ export default function Home() {
         initial={{ opacity: 0, x: -140 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ delay: 1.6, duration: 0.8 }}
-        className="bg-stone-800 px-8 py-3 border-2 border-blue-400 rounded-2xl w-[65%] mx-auto md:mx-0  text-2xl xl:text-3xl mt-14  xl:mt-20 shadow-[-5px_4px_10px_2px_#3B82F6] hover:bg-black transition-all duration-300"
+        className="bg-stone-800 px-8 py-3 border-2 border-blue-400 rounded-2xl w-[65%] mx-auto md:mx-0  text-2xl xl:text-3xl mt-14  xl:mt-20 shadow-[-5px_4px_10px_2px_#3B82F6] hover:cursor-pointer hover:bg-black transition-all duration-300"
       >
         Darmowa wycena
       </motion.button>
