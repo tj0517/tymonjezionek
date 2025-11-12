@@ -1,4 +1,5 @@
 "use client";
+import { SpeedInsights } from "@vercel/speed-insights/next"
 import Image from "next/image";
 import Menu from "./components/menu";
 import ProjectCard from "./components/projekt";
