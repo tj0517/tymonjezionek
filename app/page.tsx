@@ -1,5 +1,5 @@
 "use client";
-import { SpeedInsights } from "@vercel/speed-insights/next"
+import Link from "next/link";
 import Image from "next/image";
 import Menu from "./components/menu";
 import ProjectCard from "./components/projekt";
@@ -110,6 +110,10 @@ export default function Home() {
         czego potrzebujesz.
       </motion.div>
 
+<Link
+                  href="/kontakt"
+                >
+    
       {/* Przycisk */}
       <motion.button
         whileHover={{ scale: 1.05, boxShadow: "0px 0px 20px #3B82F6" }}
@@ -117,10 +121,11 @@ export default function Home() {
         initial={{ opacity: 0, x: -140 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ delay: 1.6, duration: 0.8 }}
-        className="bg-stone-800 px-8 py-3 border-2 border-blue-400 rounded-2xl w-[65%] mx-auto md:mx-0  text-2xl xl:text-3xl mt-14  xl:mt-20 shadow-[-5px_4px_10px_2px_#3B82F6]"
+        className="bg-stone-800 px-8 py-3 border-2 border-blue-400 rounded-2xl w-[65%] mx-auto md:mx-0  text-2xl xl:text-3xl mt-14  xl:mt-20 shadow-[-5px_4px_10px_2px_#3B82F6] hover:bg-black transition-all duration-300"
       >
         Darmowa wycena
       </motion.button>
+                  </Link>
     </motion.div>
       </div>
 
