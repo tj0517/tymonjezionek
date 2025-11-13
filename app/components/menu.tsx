@@ -66,6 +66,7 @@ export default function Menu({
         <div className="lg:hidden ml-auto">
           <button
             onClick={() => setIsOpen(!isOpen)}
+            aria-label="Menu"
             className="flex flex-col justify-center items-center w-10 h-10 text-white"
           >
             <span
