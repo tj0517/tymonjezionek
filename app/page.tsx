@@ -21,36 +21,38 @@ const o_mnie = [
   { id: 3, data: "10+", description: "Wykonanych projektów" },
 ];
 
-const oferta: { id: number; icon: IconName; title: string; description: string }[] = [
+const oferta: { id: number; icon: IconName; title: string; description: string }[] = 
+[
   {
     id: 1,
     icon: "Paintbrush",
-    title: "Tworzymy Grafiki",
+    title: "Tworzę Grafiki",
     description:
-      "Projektujemy dopasowane elementy graficzne — od ilustracji po bannery, dzięki którym Twoja marka wyróżni się w sieci.",
+      "Projektuję dopasowane elementy graficzne — od ilustracji po bannery, dzięki którym Twoja marka wyróżni się w sieci.",
   },
   {
     id: 2,
     icon: "MonitorSmartphone",
-    title: "Projektujemy Design",
+    title: "Projektuję Design",
     description:
-      "Tworzymy responsywne i funkcjonalne interfejsy. Każdy projekt to połączenie estetyki i użyteczności — UX/UI z myślą o użytkowniku.",
+      "Tworzę responsywne i funkcjonalne interfejsy. Każdy projekt to połączenie estetyki i użyteczności — UX/UI z myślą o użytkowniku.",
   },
   {
     id: 3,
     icon: "Code2",
-    title: "Programujemy",
+    title: "Programuję",
     description:
-      "Kodujemy szybkie, responsywne strony i aplikacje oparte na najnowszych technologiach — Next.js, Tailwind CSS, HTML5.",
+      "Koduję szybkie, responsywne strony i aplikacje oparte na najnowszych technologiach — Next.js, Tailwind CSS, HTML5.",
   },
   {
     id: 4,
     icon: "Search",
-    title: "Optymalizujemy",
+    title: "Optymalizuję",
     description:
-      "Ulepszamy wydajność, SEO i doświadczenie użytkownika, by Twoja strona działała szybciej i była lepiej widoczna w wynikach wyszukiwania.",
-  },
-];
+      "Ulepszam wydajność, SEO i doświadczenie użytkownika, żeby Twoja strona działała szybciej i była lepiej widoczna w wynikach wyszukiwania.",
+  }
+]
+
 
 export default function Home() {
   return (
@@ -246,9 +248,9 @@ export default function Home() {
       viewport={{ once: true, amount: 0.3 }}
       className="font-extralight text-xl xl:text-2xl leading-relaxed text-white w-full md:w-[35%] lg:w-full  text-center md:text-left"
     >
-      Umów <strong>darmową konsultację</strong> i poznaj, jak możemy pomóc Ci <strong>rozwinąć Twój projekt</strong>.
+      Umów <strong>darmową konsultację</strong> i poznaj, jak mogę ci pomóc <strong>rozwinąć Twój projekt</strong>.
       <br />
-      Wybierz termin w kalendarzu lub zostaw wiadomość w formularzu — <strong>odezwiemy się wkrótce</strong>.
+      Wybierz termin w kalendarzu lub zostaw wiadomość w formularzu — <strong>odezwę się wkrótce</strong>.
     </motion.div>
 
     {/* Kalendarz */}
