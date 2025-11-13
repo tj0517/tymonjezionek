@@ -64,7 +64,7 @@ export default function Home() {
           alt="bg"
           width={674}
           height={659}
-          priority
+          preload={true}
             decoding="async"
           className="absolute bottom-0 right-0 translate-x-1/2 z-0  sm:scale-150 2xl:scale-200"
         />
@@ -73,7 +73,7 @@ export default function Home() {
           alt="bg"
           width={674}
           height={659}
-          priority
+          preload={true}
             decoding="async"
           className="absolute top-[-20%] left-0 -translate-x-1/2 rotate-180 z-0"
         />
